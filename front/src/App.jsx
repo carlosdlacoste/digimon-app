@@ -3,6 +3,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {Home} from './pages/home.jsx';
 import { Login } from './pages/login.jsx';
 import { SignUp } from './pages/signup.jsx';
+import { NavBar } from './react-components/navbar.jsx';
+import { Footer } from './react-components/footer.jsx';
 
 function App() {
 
@@ -11,11 +13,13 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <NavBar/>
         <Routes>
           <Route element={<Home/>} path='/'/>
           <Route element={<Login />} path="/login" />
           <Route element={<SignUp />} path="/signup" />
         </Routes>
+        <Footer/>
       
       </BrowserRouter>
     </>
