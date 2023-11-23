@@ -5,8 +5,8 @@ export const NavBar = () => {
         <>
             <div className="navbar bg-amber-400">
                 <div className="navbar-start">
-                    <Link to="/">
-                        <span className="p-2 ml-2 text-xl shadow-xl bg-red-600 rounded-full rotate-12">DigiDex</span>
+                    <Link to="/" className="rotate-12">
+                        <span className="p-2 ml-2 text-xl shadow-xl bg-red-600 rounded-full">DigiDex</span>
                     </Link>
                 </div>
             <div className="navbar-end gap-x-3">
