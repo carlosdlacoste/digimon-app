@@ -6,7 +6,7 @@ import { SignUp } from './pages/signup.jsx';
 import { NavBar } from './react-components/navbar.jsx';
 import { Footer } from './react-components/footer.jsx';
 import { DigimonList } from './react-components/digimonList.jsx';
-import { DigimonCard } from './react-components/digimonCard.jsx';
+import { DigimonDetails } from './pages/digimonDetails.jsx';
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
           <Route element={<Login />} path="/login" />
           <Route element={<SignUp />} path="/signup" />
           <Route element={<DigimonList />} path="/digiapi" />
-          <Route element={<DigimonCard />} path="/digicard" />
+          <Route element={<DigimonDetails />} path="/digimon/:id" />
         </Routes>
         <Footer/>
       

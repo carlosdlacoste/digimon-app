@@ -18,24 +18,29 @@ export const DigimonList = () =>{
     
         
     }
-    
+
     useEffect(() => {
         getAllDigimons()
     }, []);
 
     return(
         <>
-            {
-                digiList.map((digimon) => (
+            
+                <div className="container mx-auto my-8 lg:w-10/12 grid grid-cols-5 gap-4">
+                    {
+                        digiList.map((digimon) => (
 
-                    <DigimonCard 
-                    key={digimon.id} 
-                    name={digimon.name} 
-                    image={digimon.image} 
-                    item={digimon}
-                    />
-                ))
-            }
+                                <DigimonCard 
+                                id={digimon.id} 
+                                name={digimon.name} 
+                                image={digimon.image} 
+                                url={digimon.href}
+                                item={digimon}
+                                />
+                                
+                        ))
+                    }
+                </div>
         </>
     )
 }
