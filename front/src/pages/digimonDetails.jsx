@@ -35,10 +35,10 @@ export const DigimonDetails = () => {
                         ))
                     }
                     <div className="card-body p-2 h-96 gap-y-11">
-                        <h2 className="card-title justify-center text-3xl">{digimonDetails.name}</h2>
-                        <div className='flex flex-row items-center'>
+                        <h2 className="card-title justify-center text-3xl border-2 border-rose-700">{digimonDetails.name}</h2>
+                        <div className='flex flex-row items-center bg-emerald-600 shadow-lg text-white font-bold'>
 
-                            <p className='font-bold'>Level:</p>
+                            <p>Level:</p>
                             {
                                 digimonDetails.levels.map((level, index) => (
 
@@ -46,9 +46,9 @@ export const DigimonDetails = () => {
                                 ))
                             }
                         </div>
-                        <div className='flex flex-row items-center'>
+                        <div className='flex flex-row items-center bg-emerald-600 shadow-lg text-white font-bold'>
 
-                            <p className='font-bold'>Type:</p>
+                            <p>Type:</p>
                             {
                                 digimonDetails.types.map((type, index) => (
 
@@ -56,9 +56,9 @@ export const DigimonDetails = () => {
                                 ))
                             }
                         </div>
-                        <div className='flex flex-row items-center'>
+                        <div className='flex flex-row items-center bg-emerald-600 shadow-lg text-white font-bold'>
 
-                            <p className='font-bold'>Atribute:</p>
+                            <p>Atribute:</p>
                             {
                                 digimonDetails.attributes.map((attribute, index) => (
 
@@ -66,9 +66,9 @@ export const DigimonDetails = () => {
                                 ))
                             }
                         </div>  
-                        <div className='flex flex-row items-center'>
+                        <div className='flex flex-row items-center bg-emerald-600 shadow-lg text-white font-bold'>
 
-                            <p className='font-bold'>Fields:</p>
+                            <p>Fields:</p>
                             {
                                 digimonDetails.fields.map((field, index) => (
 

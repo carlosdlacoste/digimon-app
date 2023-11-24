@@ -7,13 +7,10 @@ export const DigimonCard = (props) =>{
     
     return(
         <>
-                    <div className="card w-full bg-base-100 shadow-xl">
+                    <div className="card w-full bg-base-100 shadow-xl hover:bg-emerald-400" onClick={() => navigate(`/digimon/${props.id}`)}>
                         <figure><img src={props.image} alt="Algun Digimon" className='h-52 object-cover w-full' /></figure>
                         <div className="card-body">
                             <h2 className="card-title truncate justify-center">{props.name}</h2> {/* Revisar como truncar el texto adecuadamente para que se corte de una mejor forma */}
-                            <div className="card-actions justify-center">
-                                <button className="btn bg-emerald-400">View Details</button>
-                            </div>
                         </div>
                     </div>
         </>
