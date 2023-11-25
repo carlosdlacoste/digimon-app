@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -17,7 +18,10 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+
         $user = User::create($request->all());
+        $user->password = bcrypt($request->password);
+        $user->save();
         return response()->json($user, 201);
     }
 
