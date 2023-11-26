@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export const SignUp = () =>{
     const [user, setUser] = useState({});
+    const navigate = useNavigate()
     
     async function handleAddUser(event, newUser) {
         event.preventDefault()
@@ -14,6 +17,12 @@ export const SignUp = () =>{
         })
         const data = await resp.json()
         console.log(data)
+        if(data){
+            Swal.fire(
+                "Registro exitoso", "Su usuario ha sido creado con éxito", "success"
+            )
+            navigate("/login")
+        }
     }
     return(
         <>
