@@ -1,15 +1,24 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
+import Swal from 'sweetalert2';
+import { useNavigate } from "react-router-dom";
 // import { Context } from "../store/context";
 
 export const Login = () =>{
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     // const [isTokenTrue, setIsTokenTrue] = useContext(Context)
+    const [storedToken, setStoredToken] = useState("")
+    const navigate = useNavigate()
 
     const saveTokenSessionStorage = (token) => {
         // console.log('Guardando token en sessionStorage:', token);
         sessionStorage.setItem('MiToken', token);
     };
+
+    useEffect(() => {
+        const currentToken = sessionStorage.getItem('MiToken')
+            setStoredToken(currentToken)
+    }, [storedToken]);
 
     // const getTokenSessionStorage = () => {
     //     return sessionStorage.getItem('token');
@@ -34,6 +43,13 @@ export const Login = () =>{
             const token = data.token
             // console.log(token)
             saveTokenSessionStorage(token)
+            Swal.fire(
+                "Bienvenido!", "Su usuario ha sido autenticado", "success"
+            )
+            setInterval(() => {
+                window.location.reload();
+            }, 1000);
+            navigate('/')
             // console.log('Contenido de sessionStorage:', sessionStorage.getItem('MiToken'));
             // const storage = getTokenSessionStorage()
             // console.log(storage)
