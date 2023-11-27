@@ -26,7 +26,7 @@ export const Login = () =>{
 
     async function handleLogIn (event, findEmail, findPassword) {
         event.preventDefault()
-        const resp = await fetch('http://127.0.0.1:8000/api/login', {
+        const resp = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

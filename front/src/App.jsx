@@ -9,8 +9,6 @@ import { DigimonDetails } from './pages/digimonDetails.jsx';
 
 function App() {
 
-  // const basename = process.env.FRONTEND_URL || "";
-
   return (
     <>
       <BrowserRouter>

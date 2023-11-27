@@ -56,6 +56,7 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('FRONTEND_API', 'http://localhost:3000'),
 
     'asset_url' => env('ASSET_URL'),
 

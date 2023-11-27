@@ -19,7 +19,7 @@ export const NavBar = () => {
 
     async function handleLogOut (event) {
         event.preventDefault()
-        const resp = await fetch('http://127.0.0.1:8000/api/logout', {
+        const resp = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/logout", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
