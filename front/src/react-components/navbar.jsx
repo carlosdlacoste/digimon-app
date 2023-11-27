@@ -13,7 +13,6 @@ export const NavBar = () => {
     }, [storedToken]);
 
     const deleteTokenSessionStorage = (token) => {
-        // console.log('Guardando token en sessionStorage:', token);
         sessionStorage.removeItem('MiToken', token);
     };
 
@@ -31,16 +30,11 @@ export const NavBar = () => {
 
             console.log(data)
             
-            // console.log(token)
             deleteTokenSessionStorage(storedToken)
             setInterval(() => {
                 window.location.reload();
             }, 1000);
             navigate('/')
-            // Swal.fire(
-            //     "Bienvenido!", "Su usuario ha sido autenticado", "success"
-            // )
-            // navigate('/')
         }
     }
 
