@@ -1,15 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-export const NavBar = () => {
+export const NavBar = ({storedToken, handleToken}) => {
 
-    const [storedToken, setStoredToken] = useState("")
     const navigate = useNavigate()
 
     useEffect(() => {
         const currentToken = sessionStorage.getItem('MiToken')
-            setStoredToken(currentToken)
+            handleToken(currentToken)
     }, [storedToken]);
 
     const deleteTokenSessionStorage = (token) => {
@@ -31,9 +30,7 @@ export const NavBar = () => {
             console.log(data)
             
             deleteTokenSessionStorage(storedToken)
-            setInterval(() => {
-                window.location.reload();
-            }, 1000);
+            handleToken(null)
             navigate('/')
         }
     }

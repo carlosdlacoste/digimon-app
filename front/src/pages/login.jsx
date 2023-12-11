@@ -1,21 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 
 export const Login = () =>{
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [storedToken, setStoredToken] = useState("")
     const navigate = useNavigate()
 
     const saveTokenSessionStorage = (token) => {
         sessionStorage.setItem('MiToken', token);
     };
-
-    useEffect(() => {
-        const currentToken = sessionStorage.getItem('MiToken')
-            setStoredToken(currentToken)
-    }, [storedToken]);
 
 
     async function handleLogIn (event, findEmail, findPassword) {
@@ -38,9 +32,6 @@ export const Login = () =>{
             Swal.fire(
                 "Bienvenido!", "Su usuario ha sido autenticado", "success"
             )
-            setInterval(() => {
-                window.location.reload();
-            }, 1000);
             navigate('/')
         }
     }

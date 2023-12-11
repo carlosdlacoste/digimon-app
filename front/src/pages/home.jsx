@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {DigimonList} from "../react-components/digimonList.jsx";
 
 
-export const Home = () =>{
-    const [storedToken, setStoredToken] = useState("")
+export const Home = ({storedToken, handleToken}) =>{
 
     useEffect(() => {
         const currentToken = sessionStorage.getItem('MiToken')
-            setStoredToken(currentToken)
+            handleToken(currentToken)
     }, [storedToken]);
 
     return(
