@@ -40,40 +40,52 @@ export const DigimonDetails = () => {
 
                             <p>Level:</p>
                             {
-                                digimonDetails.levels.map((level, index) => (
+                                digimonDetails.levels.length !== 0 ? digimonDetails.levels.map((level, index) => (
 
                                     <p key={index} className='text-xs'>{level.level}</p>
                                 ))
+
+                                :
+                                    <p className='text-xs text-red-300'>Classified</p> 
                             }
                         </div>
                         <div className='flex flex-row items-center bg-emerald-600 shadow-lg text-white font-bold'>
 
                             <p>Type:</p>
                             {
-                                digimonDetails.types.map((type, index) => (
+                                digimonDetails.types.length !== 0 ?  digimonDetails.types.map((type, index) => (
 
                                     <p key={index} className='text-xs'>{type.type}</p>
                                 ))
+
+                                :
+                                    <p className='text-xs text-red-300'>Classified</p>
                             }
                         </div>
                         <div className='flex flex-row items-center bg-emerald-600 shadow-lg text-white font-bold'>
 
                             <p>Atribute:</p>
                             {
-                                digimonDetails.attributes.map((attribute, index) => (
+                                digimonDetails.attributes.length !== 0 ?  digimonDetails.attributes.map((attribute, index) => (
 
                                     <p key={index} className='text-xs'>{attribute.attribute}</p>
                                 ))
+
+                                :
+                                    <p className='text-xs text-red-300'>Classified</p>
                             }
                         </div>  
                         <div className='flex flex-row items-center bg-emerald-600 shadow-lg text-white font-bold'>
 
                             <p>Fields:</p>
                             {
-                                digimonDetails.fields.map((field, index) => (
+                                digimonDetails.fields.length !== 0 ? digimonDetails.fields.map((field, index) => (
 
                                     <p key={index} className='text-xs'>{field.field}</p>
                                 ))
+
+                                :
+                                    <p className='text-xs text-red-300'>Classified</p>
                             }
                         </div>  
                     </div>
