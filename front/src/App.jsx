@@ -18,12 +18,14 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar storedToken={token} handleToken={handleTokenChange}/>
-        <Routes>
-          <Route element={<Home storedToken={token} handleToken={handleTokenChange}/>} path='/'/>
-          <Route element={<Login />} path="/login" />
-          <Route element={<SignUp />} path="/signup" />
-          <Route element={<DigimonDetails />} path="/digimon/:id" />
-        </Routes>
+        <div style={{minHeight: "100vh"}}>
+          <Routes>
+            <Route element={<Home storedToken={token} handleToken={handleTokenChange}/>} path='/'/>
+            <Route element={<Login />} path="/login" />
+            <Route element={<SignUp />} path="/signup" />
+            <Route element={<DigimonDetails />} path="/digimon/:id" />
+          </Routes>
+        </div>
         <Footer/>
       
       </BrowserRouter>
