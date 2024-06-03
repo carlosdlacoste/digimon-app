@@ -91,13 +91,20 @@ export const DigimonDetails = () => {
                                                 <p className='text-xs text-red-300'>Classified</p>
                                         }
                                     </div>
-                                    <div className='flex flex-row items-center bg-emerald-600 shadow-lg text-white font-bold'>
+                                    <div className='flex flex-row items-center justify-between bg-emerald-600 shadow-lg text-white font-bold'>
+                                        <div>
+                                            <p>Fields:</p>
+                                        </div>
 
-                                        <p>Fields:</p>
                                         {
                                             digimonDetails.fields.length !== 0 ? digimonDetails.fields.map((field, index) => (
+                                                <>
+                                                    <div>
 
-                                                <img key={index} className='text-xs'src={field.image} alt="Uknown"/>
+                                                        <img key={index} className='text-xs'src={field.image} alt="Uknown"/>
+                                                    </div>
+                                                </>
+
                                             ))
 
                                             :
