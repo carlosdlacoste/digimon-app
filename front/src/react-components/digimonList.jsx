@@ -8,7 +8,7 @@ export const DigimonList = () =>{
     
     async function getAllDigimons() {
         try {
-            const resp = await fetch("https://www.digi-api.com/api/v1/digimon?pageSize=20")
+            const resp = await fetch("https://digi-api.com/api/v1/digimon?pageSize=20")
             const data = await resp.json()
             // console.log(data.content)
             setDigiList(data.content)
