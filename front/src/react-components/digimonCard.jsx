@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 export const DigimonCard = (props) =>{
     const navigate = useNavigate()
-
-    
     return(
         <>
                     <div className="card w-full bg-base-100 shadow-xl hover:bg-emerald-400" onClick={() => navigate(`/digimon/${props.id}`)}>

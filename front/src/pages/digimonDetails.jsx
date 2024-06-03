@@ -11,7 +11,7 @@ export const DigimonDetails = () => {
 
     async function getDigimonDetail(id) {
         try {
-            const resp = await fetch(`https://www.digi-api.com/api/v1/digimon/${id}`)
+            const resp = await fetch(`https://digi-api.com/api/v1/digimon/${id}`)
             const data = await resp.json()
             // console.log(data)
             setDigimonDetails(data)
@@ -90,20 +90,20 @@ export const DigimonDetails = () => {
                                             :
                                                 <p className='text-xs text-red-300'>Classified</p>
                                         }
-                                    </div>  
+                                    </div>
                                     <div className='flex flex-row items-center bg-emerald-600 shadow-lg text-white font-bold'>
 
                                         <p>Fields:</p>
                                         {
                                             digimonDetails.fields.length !== 0 ? digimonDetails.fields.map((field, index) => (
 
-                                                <p key={index} className='text-xs'>{field.field}</p>
+                                                <img key={index} className='text-xs'src={field.image} alt="Uknown"/>
                                             ))
 
                                             :
                                                 <p className='text-xs text-red-300'>Classified</p>
                                         }
-                                    </div>  
+                                    </div>
                                 </div>
                             </div>
                             <button className="btn bg-red-600 w-64 mx-auto text-lg items-center" onClick={() => navigate("/")}>
